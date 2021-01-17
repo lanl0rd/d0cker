@@ -1,0 +1,1 @@
+docker build --rm --compress --cache-from=ubuntu:16.04 -t ssh/ubuntu . -f openssh-ubuntu.dockerfile && docker save openssh/ubuntu:latest | gzip > openssh-ubuntu.tar.gz
