@@ -1,4 +1,4 @@
-FROM--platform=$BUILDPLATFORM python:latest AS build
+FROM --platform=$BUILDPLATFORM python:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 WORKDIR /app

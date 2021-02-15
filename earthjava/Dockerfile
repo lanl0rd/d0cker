@@ -1,4 +1,4 @@
-FROM--platform=$BUILDPLATFORM java:latest AS build
+FROM --platform=$BUILDPLATFORM java:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 WORKDIR /app

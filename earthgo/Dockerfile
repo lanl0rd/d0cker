@@ -1,4 +1,4 @@
-FROM--platform=$BUILDPLATFORM golang:latest AS build
+FROM --platform=$BUILDPLATFORM golang:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 WORKDIR /app
