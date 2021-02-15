@@ -1,20 +1,24 @@
 FROM node:latest
 WORKDIR /app
-COPY . .
 RUN apt-get update && \
     apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common rsync openssl mergerfs sshfs zip && \
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
+    add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
     apt-get update && \
     apt-get install -y docker-ce docker-ce-cli containerd.io python3-pip dnsutils && \
-    pip3 install docker-compose && \
-    pip3 install crossplane && \
     npm i -g typescript && \
     npm i -g rimraf && \
+    echo "adding frameworks!" && \
     npm i -g @nestjs/cli && \
+    echo "added nest, now adding angular" && \
     npm i -g @angular/cli && \
+    echo "added angular, now adding nx" && \
     npm i -g nx && \
+    echo "added nx, now adding vue" && \
     npm i -g @vue/cli && \
+    echo "added vue, now adding react" && \
     npm i -g create-react-app && \
+    echo "added react, now adding express" && \
     npm i -g express-generator && \
+    echo "added nest, now adding svelte" && \
     npm i -g svelte-cli
