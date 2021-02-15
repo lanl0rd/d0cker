@@ -3,9 +3,7 @@ ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 WORKDIR /app
 RUN apt-get update && \
-    apt-get install -y curl wget git sshfs mergerfs rsync openssl zip python3-pip dnsutils && \
-    pip3 install docker-compose && \
-    pip3 install crossplane && \
+    apt-get install -y curl wget git sshfs mergerfs rsync openssl zip unzip python3-pip dnsutils && \
     go get -u github.com/gin-gonic/gin && \
     go get github.com/beego/beego/v2@v2.0.0 && \
     go get github.com/revel/revel && \
