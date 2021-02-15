@@ -3,7 +3,7 @@ ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 WORKDIR /app
 RUN apt-get update && \
-    apt-get install -y curl git sshfs mergerfs rsync openssl zip python3-pip dnsutils && \
+    apt-get install -y curl wget git sshfs mergerfs rsync openssl zip python3-pip dnsutils && \
 
     pip3 install docker-compose && \
     pip3 install crossplane && \

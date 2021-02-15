@@ -5,7 +5,7 @@ ARG BUILDPLATFORM
 WORKDIR /app
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
     apt-get update && \
-    apt-get install -y curl git rsync openssl mergerfs sshfs zip python3-pip dnsutils && \
+    apt-get install -y curl git wget rsync openssl mergerfs sshfs zip python3-pip dnsutils && \
     pip3 install docker-compose && \
     pip3 install crossplane && \
     npm i -g typescript && \
