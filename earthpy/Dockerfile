@@ -1,8 +1,6 @@
-FROM --platform=$BUILDPLATFORM node:latest AS build
+FROM--platform=$BUILDPLATFORM python:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
-
-FROM python:latest
 WORKDIR /app
 RUN apt-get update && \
     apt-get install -y rsync openssl zip python3-pip dnsutils && \
