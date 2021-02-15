@@ -5,9 +5,9 @@ ARG BUILDPLATFORM
 WORKDIR /app
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
     apt-get update && \
-    apt-get install -y rsync openssl mergerfs sshfs zip python3-pip dnsutils && \
-    apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common && \
+    apt-get install -y curl rsync openssl mergerfs sshfs zip python3-pip dnsutils && \
     
+    apt-get install -y apt-transport-https ca-certificates  gnupg-agent software-properties-common && \
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     add-apt-repository "deb [arch=${BUILDPLATFORM//linux\//}] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
     apt-get update && \
