@@ -5,4 +5,4 @@ ARG amd="amd"
 
 WORKDIR /app
 COPY dockerfile.sh /tmp/  
-RUN chmod u+x /tmp/dockerfile.sh && /tmp/dockerfile.sh $TARGETPLATFORM $BUILDPLATFORM $amd
+RUN chmod u+x /tmp/dockerfile.sh && TARGETPLATFORM=$TARGETPLATFORM BUILDPLATFORM=$BUILDPLATFORM amd=$amd /tmp/dockerfile.sh
