@@ -1,5 +1,5 @@
 #!/bin/bash -x
-
+export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
     apt-get update && \
     apt-get install -y curl git wget rsync openssl mergerfs sshfs zip unzip python3-pip dnsutils && \
