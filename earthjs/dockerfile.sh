@@ -15,7 +15,8 @@ echo "this is command: $command" && \
     apt-get install -y docker-ce docker-ce-cli containerd.io  && \
     pip3 install docker-compose && \
     pip3 install crossplane && \
-    npm i -g yarn || true && \
+    npm i -g npm && \
+    npm i -g yarn --force && \
     npm i -g typescript && \
     npm i -g rimraf && \
     npm i -g @nestjs/cli && \
