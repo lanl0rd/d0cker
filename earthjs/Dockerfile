@@ -4,5 +4,5 @@ ARG BUILDPLATFORM
 ARG amd="amd"
 
 WORKDIR /app
-COPY bash.sh /tmp/  
-RUN chmod u+x /tmp/bash.sh && /tmp/bash.sh $arg
+COPY dockerfile.sh /tmp/  
+RUN chmod u+x /tmp/dockerfile.sh && /tmp/dockerfile.sh $arg
