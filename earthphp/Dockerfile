@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM perl:latest AS build
+FROM --platform=$BUILDPLATFORM php:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 

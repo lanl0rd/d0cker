@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM perl:latest AS build
+FROM --platform=$BUILDPLATFORM swift:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
