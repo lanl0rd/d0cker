@@ -23,7 +23,7 @@ echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
     npm i -g @nestjs/cli && \
     npm i -g @angular/cli && \
     npm i -g nx && \
-    npm i -g @vue/cli && \
+
     npm i -g create-react-app && \
     npm i -g express-generator && \
     npm i -g svelte-cli

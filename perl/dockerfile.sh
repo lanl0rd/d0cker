@@ -16,4 +16,5 @@ apt-get update && \
     apt-get install -y docker-ce docker-ce-cli containerd.io && \
     pip3 install docker-compose && \
     pip3 install crossplane && \
+    curl -L http://cpanmin.us | perl - --sudo Dancer2
     
