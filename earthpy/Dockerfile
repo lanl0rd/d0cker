@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM openjdk:17-jdk-buster AS build
+FROM --platform=$BUILDPLATFORM python:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
