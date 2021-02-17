@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM python:latest AS build
+FROM --platform=$BUILDPLATFORM python:3.7.10-buster AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 

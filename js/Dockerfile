@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM node:latest AS build
+FROM --platform=$BUILDPLATFORM node:erbium-buster AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
