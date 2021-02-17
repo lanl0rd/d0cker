@@ -16,6 +16,6 @@ apt-get update && \
     apt-get install -y docker-ce docker-ce-cli containerd.io && \
     pip3 install docker-compose && \
     pip3 install crossplane && \
-    curl -s https://packagecloud.io/install/repositories/phalcon/nightly/script.deb.sh | sudo bash && \
+    curl -s https://packagecloud.io/install/repositories/phalcon/nightly/script.deb.sh | bash && \
     apt-get update && \
     apt-get -y install php7.0-phalcon
