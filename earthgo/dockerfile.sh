@@ -14,14 +14,14 @@ apt-get update && \
     eval "$command" && \
     apt-get update && \
     apt-get install -y docker-ce docker-ce-cli containerd.io && \
-    go get -u -x github.com/gin-gonic/gin && \
-    go get -u -x github.com/beego/beego/v2@v2.0.0 && \
-    go get -u -x github.com/revel/revel && \
+    go get -u github.com/gin-gonic/gin && \
+    go get github.com/beego/beego/v2@v2.0.0 && \
+    go get github.com/revel/revel && \
     go get -u github.com/valyala/fasthttp && \
-    go get -u -x goji.io && \
-    go get -u -x github.com/go-martini/martini && \
-    go get -u -x github.com/gorilla/mux && \
-    go get -u -x github.com/labstack/echo/v4 && \
-    go get -u -x github.com/urfave/negroni && \
-    go get -u -x github.com/go-kit/kit && go get -u -x github.com/kujtimiihoxha/kit && \
+    go get goji.io && \
+    go get github.com/go-martini/martini && \
+    go get github.com/gorilla/mux && \
+    go get github.com/labstack/echo/v4 && \
+    go get github.com/urfave/negroni && \
+    go get github.com/go-kit/kit && go get github.com/kujtimiihoxha/kit && \
     wget https://github.com/gobuffalo/buffalo/releases/download/v0.16.21/buffalo_0.16.21_Linux_x86_64.tar.gz && tar -xvzf buffalo_0.16.21_Linux_x86_64.tar.gz && mv buffalo /usr/local/bin/buffalo
