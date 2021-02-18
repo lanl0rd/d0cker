@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM swift:latest AS build
+FROM --platform=$TARGETPLATFORM swift:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 

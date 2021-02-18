@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM ruby:latest AS build
+FROM --platform=$TARGETPLATFORM ruby:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
