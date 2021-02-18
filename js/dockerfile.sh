@@ -4,7 +4,7 @@ export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 # command="add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable\""
 # if [[ "$TARGETPLATFORM" == *"'arm'"* ]] ; then command="add-apt-repository \"deb [arch=arm64] https://download.docker.com/linux/debian $(lsb_release -cs) stable\""; fi;
 command="add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/debian buster stable\""
-if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then command="add-apt-repository \"deb [arch=arm64] https://download.docker.com/linux/debian buster stable\"" ; dpkg --add-architecture arm64 ; dpkg --remove-architecture amd64 ; apt-get update ;
+if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then command="add-apt-repository \"deb [arch=arm64] https://download.docker.com/linux/debian buster stable\""; dpkg --add-architecture arm64 ; dpkg --remove-architecture amd64 ; apt-get update ; fi ;
 
 echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
     apt-get update && \
