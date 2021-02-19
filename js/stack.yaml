@@ -1,4 +1,4 @@
-# docker service rm lanl0rd_d0cker_js || true && docker stack deploy -c $HOME/d0cker/ruby/stack.yaml --resolve-image=never lanl0rd_d0cker
+# docker service rm lanl0rd_d0cker_js || true && docker stack deploy -c $HOME/d0cker/js/stack.yaml --resolve-image=never lanl0rd_d0cker
 
 version: '3.7'
 
