@@ -41,7 +41,7 @@ apt update \
 
 # tini to fix subreap
 export TINI_VERSION='v0.18.0'
-apt install wget
+apt install -y wget
 wget -O /bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini"
 chmod +x /bin/tini
 

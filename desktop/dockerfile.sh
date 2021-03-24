@@ -13,7 +13,7 @@ apt-get upgrade && \
 
 if [[ "$TARGETPLATFORM" == *"arm"* ]]
 then
-    chmod u+x /tmp/arm.sh
+    chmod u+x /tmp/arm.sh && /tmp/arm.sh
 else
-    chmod u+x /tmp/amd.sh
+    chmod u+x /tmp/amd.sh && /tmp/amd.sh
 fi

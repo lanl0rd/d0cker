@@ -4,7 +4,7 @@ sed -i 's#http://archive.ubuntu.com/ubuntu/#mirror://mirrors.ubuntu.com/mirrors.
 export DEBIAN_FRONTEND='noninteractive'
 apt update \
     && apt install -y --no-install-recommends software-properties-common curl apache2-utils \
-    && apt update \
+    && apt update -y \
     && apt install -y --no-install-recommends --allow-unauthenticated \
         supervisor nginx sudo net-tools zenity xz-utils \
         dbus-x11 x11-utils alsa-utils \
@@ -35,7 +35,7 @@ apt update \
 
 # tini for subreap
 export TINI_VERSION='v0.18.0'
-apt install wget
+apt install -y wget
 wget -O /bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-arm64"
 chmod +x /bin/tini
 
