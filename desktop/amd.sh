@@ -3,7 +3,7 @@ export DEBIAN_FRONTEND='noninteractive'
 
 apt update \
     && apt install -y --no-install-recommends software-properties-common curl apache2-utils \
-    && apt update \
+    && apt update -y \
     && apt install -y --no-install-recommends --allow-unauthenticated \
         supervisor nginx sudo net-tools zenity xz-utils \
         dbus-x11 x11-utils alsa-utils \
