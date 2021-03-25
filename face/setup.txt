@@ -21,7 +21,9 @@ docker run --privileged -v /dev/shm:/dev/shm -v /var/run/docker.sock:/var/run/do
 docker ps # to get the container id TODO: lookup fancy way to extract id and pass to next command
 docker commit 123 lanl0rd/face:checkpoint 
 
+##########################
 #### here be dragons! ####
+##########################
 
 # adjusted look and feel to be adwaita dark, opened terminal gray and cyan and ubuntu monospace, firefox to 80%
 
@@ -33,7 +35,7 @@ rm vscode.deb
 
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" # add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 apt update
-apt install -y --fix-broken docker-ce docker-ce-cli containerd.io curl git wget rsync openssl mergerfs sshfs zip unzip python3-pip dnsutils dialog apt-utils apt-transport-https ca-certificates  gnupg-agent software-properties-common nano nginx certbot php openjdk-14-jre nano ruby-full
+apt install -y --fix-broken docker-ce docker-ce-cli containerd.io curl git wget rsync openssl mergerfs sshfs zip unzip python3-pip dnsutils dialog apt-utils apt-transport-https ca-certificates  gnupg-agent software-properties-common nano nginx certbot php openjdk-14-jre nano ruby-full openssh-server openssh-client
 apt update
 
 curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
