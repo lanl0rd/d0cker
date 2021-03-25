@@ -18,8 +18,15 @@ docker run --shm-size=256m -p 6080:80 -p 5901:5900 lanl0rd/face
 docker run --privileged -v /dev/shm:/dev/shm -v /var/run/docker.sock:/var/run/docker.sock -v $HOME:/root/home  -p 6080:80 -p 5091:5090 
 
 # if at any point while running the below you have time to make a checkpoint, you can do so with (note that it will copy the entire thing! so rip disk space):
-docker ps # to get the container id TODO: lookup fancy way to extract id and pass to next command
+docker ps
+# to get the container id TODO: lookup fancy way to extract id and pass to next command
 docker commit 123 lanl0rd/face:checkpoint 
+# when finished you can run
+docker tag lanl0rd/face:checkpoint lanl0rd/face:amd # or arm
+docker save lanl0rd/face:amd | gzip > face-amd.tar.gz
+# then on a machine you wish to upload on (you can skip the save if you just wanna push directly without a backup)
+docker load < face-amd.tar.gz
+# check steps at the beginning to push arm and amd images and tie them together in a manifest!
 
 ##########################
 #### here be dragons! ####
