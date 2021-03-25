@@ -38,8 +38,10 @@ curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install yarn
 
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.2.linux-amd64.tar.gz
+wget -P /root/Downloads https://golang.org/dl/go1.16.2.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf /root/Downloads/go1.16.2.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc 
+rm /root/Downloads/go1.16.2.linux-amd64.tar.gz
 
 curl -L http://cpanmin.us | perl - --sudo Dancer2
 
