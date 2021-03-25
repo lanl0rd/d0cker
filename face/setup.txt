@@ -1,3 +1,28 @@
+# base image from dorowu, https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc
+docker pull dorowu/ubuntu-desktop-lxde-vnc:focal  # on amd device
+docker pull dorowu/ubuntu-desktop-lxde-vnc:focal-arm64 # on arm device
+# create repository in hub.docker 
+docker tag ddorowu/ubuntu-desktop-lxde-vnc:focal lanl0rd/face:amd
+docker tag ddorowu/ubuntu-desktop-lxde-vnc:focal-arm64 lanl0rd/face:arm
+docker push lanl0rd/face:amd
+docker push lanl0rd/face:arm
+docker manifest create lanl0rd/face:latest --amend lanl0rd/face:arm --amend lanl0rd/face:amd
+docker manifest push lanl0rd/face:latest
+docker pull lanl0rd/face
+docker run --shm-size=256m -p 6080:80 -p 5901:5900 lanl0rd/face
+
+# for shared memory, but not sure this is safe if you are letting other users:
+# docker run -v /dev/shm:/dev/shm -p 6080:80
+
+# of course you can do things like:
+docker run --privileged -v /dev/shm:/dev/shm -v /var/run/docker.sock:/var/run/docker.sock -v $HOME:/root/home  -p 6080:80 -p 5091:5090 
+
+# if at any point while running the below you have time to make a checkpoint, you can do so with (note that it will copy the entire thing! so rip disk space):
+docker ps # to get the container id TODO: lookup fancy way to extract id and pass to next command
+docker commit 123 lanl0rd/face:checkpoint 
+
+#### here be dragons! ####
+
 # adjusted look and feel to be adwaita dark, opened terminal gray and cyan and ubuntu monospace, firefox to 80%
 
 download vscode & sublime & opera .deb /* curl + dpkg -i ... */ or just mount/download the .deb from local and dpkg -i
