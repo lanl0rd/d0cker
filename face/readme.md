@@ -18,4 +18,23 @@ js, typescript, python, node, java, ruby, php, perl, certbot, docker, nginx
 
 ## clis/frameworks
 
-node: npm, yarn, angular, nest, express, vue, react, svelte, nx, java: spring, maven, gradle go: revel, gin, beego, fasthttp, goji, gomartini, gorilla, labstack, negroni, buffalo python: cherrypy, sanic, flask, django, aiohttp[speedups], tornado, dash, falcon, bottle, hug perl: Dancer2 php: phalcon (tbd) ruby: rails
+### node (js, ts)
+npm, yarn, angular, nest, express, vue, react, svelte, nx
+
+### java
+spring, maven, gradle
+
+### go
+revel, gin, beego, fasthttp, goji, gomartini, gorilla, labstack, negroni, buffalo
+
+### python
+cherrypy, sanic, flask, django, aiohttp[speedups], tornado, dash, falcon, bottle, hug
+
+### ruby
+rails
+
+### perl
+Dancer2
+
+### php
+ phalcon (tbd)
