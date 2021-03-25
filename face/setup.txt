@@ -27,7 +27,7 @@ docker commit 123 lanl0rd/face:checkpoint
 
 download sublime & opera .deb /* curl + dpkg -i ... */ or just mount/download the .deb from local and dpkg -i
 
-wget -P /root/Downloads ‐‐output-document=vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64
+wget -P /root/Downloads ‐o vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64
 dpkg -i /root/Downloads/vscode.deb
 rm vscode.deb
 
@@ -42,10 +42,10 @@ curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install yarn
 
-wget -P /root/Downloads https://golang.org/dl/go1.16.2.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf /root/Downloads/go1.16.2.linux-amd64.tar.gz
+wget -P /root/Downloads -o go.tar.gz https://golang.org/dl/go1.16.2.linux-amd64.tar.gz # https://golang.org/dl/go1.16.2.linux-arm64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf /root/Downloads/go.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc 
-rm /root/Downloads/go1.16.2.linux-amd64.tar.gz
+rm /root/Downloads/go.tar.gz
 
 curl -L http://cpanmin.us | perl - --sudo Dancer2
 
