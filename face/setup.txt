@@ -25,7 +25,11 @@ docker commit 123 lanl0rd/face:checkpoint
 
 # adjusted look and feel to be adwaita dark, opened terminal gray and cyan and ubuntu monospace, firefox to 80%
 
-download vscode & sublime & opera .deb /* curl + dpkg -i ... */ or just mount/download the .deb from local and dpkg -i
+download sublime & opera .deb /* curl + dpkg -i ... */ or just mount/download the .deb from local and dpkg -i
+
+wget -P /root/Downloads ‐‐output-document=vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64
+dpkg -i /root/Downloads/vscode.deb
+rm vscode.deb
 
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 apt update
