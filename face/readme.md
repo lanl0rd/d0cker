@@ -12,13 +12,13 @@ This is a fork of dorowu's popular lxde ubuntu image!
 
 *for advanced users who are confident in safety of using the hosts resources, you can do things like:*
 
-    docker run --privileged \
-     -v /dev/shm:/dev/shm \
-     -v /var/run/docker.sock:/var/run/docker.sock:ro \
-     -v $HOME:/root/home \
-     -p 8008:80 \
-     -p 5050:5090 \
-     lanl0rd/face
+     docker run --privileged \
+        -v /dev/shm:/dev/shm \
+        -v /var/run/docker.sock:/var/run/docker.sock:ro \
+        -v $HOME:/root/home \
+        -p 8008:80 \
+        -p 5050:5090 \
+        lanl0rd/face
 
 Quick explanation of the magic:
 
