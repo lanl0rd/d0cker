@@ -1,0 +1,17 @@
+# docker service rm d0cker_frpc || true && docker stack deploy -c $(pwd)/frpc.yaml --resolve-image=never d0cker
+
+version: '3.7'
+
+services:
+
+  frpc:
+    image: lanl0rd/frp
+    networks:
+        - host
+    volumes:
+      - ./frps.ini:/etc/frp/frps.ini
+    command: ./frp/frps
+
+networks:
+  host:
+    external: true
