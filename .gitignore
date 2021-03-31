@@ -1,4 +1,4 @@
 *.tar.gz
 .DS_Store
-!frp/frp_arm64.tar.gz
-!frp/frp_amd64.tar.gz
+!frp/frp_arm.tar.gz
+!frp/frp_amd.tar.gz
