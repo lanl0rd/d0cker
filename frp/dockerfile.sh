@@ -1,11 +1,14 @@
-frp="frp_amd"
-if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then frp="frp_arm"; fi ;
+frp_download="https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_amd64.tar.gz"
+frp="frp_0.36.2_linux_amd64"
 
-echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
+if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then frp_download="https://github.com/fatedier/frp/releases/download/v0.36.2/frp_0.36.2_linux_arm64.tar.gz"; frp="frp_0.36.2_linux_arm64"; fi ;
 
-cd /tmp/docker && \
-pwd && \
-ls -la && \
-tar -xf ${frp}.tar.gz && \
-mv ${frp} /etc/frp && \
+echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
+
+wget -P /tmp/docker $frp_download
+cd /tmp/docker
+tar -xf ${frp}.tar.gz
+pwd
+ls -la
+mv ${frp} /etc/frp
 rm -rf /tmp/docker
