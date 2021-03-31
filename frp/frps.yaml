@@ -9,7 +9,7 @@ services:
     networks:
         - host
     volumes:
-      - ./frps.ini:/frp/frps.ini
+      - ./frps.ini:/etc/frp/frps.ini
     command: /etc/frp/frps
 
 networks:
