@@ -1,6 +1,6 @@
-FROM --platform=$TARGETPLATFORM alpine:latest AS build
+FROM --platform=$TARGETPLATFORM ubuntu:latest AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
-COPY dockerfile.sh /tmp/
-RUN chmod u+x /tmp/dockerfile.sh && TARGETPLATFORM=$TARGETPLATFORM BUILDPLATFORM=$BUILDPLATFORM /tmp/dockerfile.sh
+COPY . /tmp/docker
+RUN ls -la /tmp/ && ls -la /tmp/docker || true && chmod u+x /tmp/docker/dockerfile.sh && TARGETPLATFORM=$TARGETPLATFORM BUILDPLATFORM=$BUILDPLATFORM /tmp/docker/dockerfile.sh
 WORKDIR /frp
