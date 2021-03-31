@@ -1,5 +1,5 @@
-frp="frp_amd64"
-if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then frp="frp_arm64"; fi ;
+frp="frp_amd"
+if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then frp="frp_arm"; fi ;
 
 echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
 
