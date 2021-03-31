@@ -10,7 +10,7 @@ services:
         - host
     volumes:
       - ./frpc.ini:/etc/frp/frpc.ini
-    command: ./frpc
+    command: /etc/frp/frpc
 
 networks:
   host:
