@@ -7,10 +7,14 @@ services:
   frps:
     image: lanl0rd/frp
     networks:
-        - host
+      - host
+    environment:
+      - FRP_ADMIN_USER=${FROM_ADMIN_USER}
+      - FRP_ADMIN_PWD=${FROM_ADMIN_PWD}
+      - FRP_TOKEN=${FRP_TOKEN}
     volumes:
-      - ./frps.ini:/etc/frp/frps.ini
-    command: /etc/frp/frps
+      - ./frps.ini:/etc/frp/frps-docker.ini
+    command: /etc/frp/frpc -c /etc/frp/frps-docker.ini
 
 networks:
   host:

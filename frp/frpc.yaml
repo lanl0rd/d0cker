@@ -7,10 +7,14 @@ services:
   frpc:
     image: lanl0rd/frp
     networks:
-        - host
+      - host
+    environment:
+      - FRP_SERVER_ADDR=${FRP_SERVER_ADDR}
+      - FRP_HTTP_PROXY_USER=${FRP_HTTP_PROXY_USER}
+      - FRP_HTTP_PROXY_PASSWD=${FRP_HTTP_PROXY_PASSWD}
     volumes:
-      - ./frpc.ini:/etc/frp/frpc.ini
-    command: /etc/frp/frpc
+      - ./frpc.ini:/etc/frp/frpc-docker.ini
+    command: /etc/frp/frpc -c /etc/frp/frpc-docker.ini
 
 networks:
   host:
