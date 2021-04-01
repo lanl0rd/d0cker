@@ -5,7 +5,8 @@ version: '3.7'
 services:
 
   frpc:
-    image: lanl0rd/frp
+    # image: lanl0rd/frp
+    image: snowdreamtech/frpc
     networks:
       - host
     environment:
