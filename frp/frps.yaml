@@ -1,4 +1,4 @@
-# docker service rm d0cker_frps || true && docker stack deploy -c $(pwd)/frps.yaml --resolve-image=never d0cker
+# docker service rm d0cker_frps || true && docker stack deploy -c $(pwd)/frps.yaml --resolve-image=never d0cker && docker service logs -f d0cker_frps
 
 version: '3.7'
 
