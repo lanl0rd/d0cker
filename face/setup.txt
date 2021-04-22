@@ -34,7 +34,7 @@ docker load < face-amd.tar.gz
 
 # adjusted look and feel to be adwaita dark, opened terminal gray and cyan and ubuntu monospace, firefox to 80%
 
-download sublime & opera .deb /* curl + dpkg -i ... */ or just mount/download the .deb from local and dpkg -i
+download sublime & opera & mysql workbench & 3t studio .deb /* curl + dpkg -i ... */ or just mount/download the .deb from local and dpkg -i
 
 wget -P /root/Downloads ‐o vscode.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 # https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-arm64
 dpkg -i /root/Downloads/vscode.deb
