@@ -1,4 +1,4 @@
-# docker service rm d0cker_frpc || true && docker stack deploy -c $(pwd)/frpc.yaml --resolve-image=never d0cker
+# docker service rm d0cker_frpc || true && docker stack deploy -c $(pwd)/frpc.yaml --resolve-image=never d0cker && docker service logs -f d0cker_frpc
 
 version: '3.7'
 
@@ -14,8 +14,8 @@ services:
       # - FRP_HTTP_PROXY_USER=${FRP_HTTP_PROXY_USER}
       # - FRP_HTTP_PROXY_PASSWD=${FRP_HTTP_PROXY_PASSWD}
       - FRP_TOKEN=${FRP_TOKEN}
-      - FRP_LOCAL_IP=127.0.0.1
-      # - FRP_LOCAL_IP=host.docker.internal
+      # - FRP_LOCAL_IP=127.0.0.1
+      - FRP_LOCAL_IP=host.docker.internal
     volumes:
       # - ./frpc.ini:/etc/frp/frpc-docker.ini
       - ./frpc.ini:/etc/frp/frpc.ini

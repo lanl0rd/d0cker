@@ -42,7 +42,7 @@ rm vscode.deb
 
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" # add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 apt update
-apt install -y --fix-broken docker-ce docker-ce-cli containerd.io curl git wget rsync openssl mergerfs sshfs zip unzip python3-pip dnsutils dialog apt-utils apt-transport-https ca-certificates  gnupg-agent software-properties-common nano nginx certbot php openjdk-14-jre nano ruby-full openssh-server openssh-client
+apt install -y --fix-broken docker-ce docker-ce-cli containerd.io curl git wget rsync openssl mergerfs sshfs zip unzip python3-pip dnsutils dialog apt-utils apt-transport-https ca-certificates  gnupg-agent software-properties-common nano nginx certbot php openjdk-14-jre nano ruby-full openssh-server openssh-client apache2-utils
 apt update
 
 curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
