@@ -9,7 +9,7 @@ if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then command="add-apt-repository \"deb [
 echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" && \
 apt-get update && \
     apt-get install -y apt-utils && \
-    apt-get install -y curl git wget rsync openssl mergerfs sshfs zip unzip python3-pip dnsutils maven dialog apt-utils apt-transport-https ca-certificates  gnupg-agent software-properties-common && \
+    apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils maven dialog apt-utils apt-transport-https ca-certificates  gnupg-agent software-properties-common && \
     apt-get update && \
     eval "curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -" && \
     eval "$command" && \
