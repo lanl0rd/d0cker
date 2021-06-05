@@ -97,8 +97,8 @@ pip3 install hug -U
 
 #perl
 apt-get install -y perl
-curl -L http://cpanmin.us | perl - --sudo Dancer2
+# curl -L http://cpanmin.us | perl - --sudo Dancer2
 
 #ruby
-apt-get install ruby-full
+apt-get install -y ruby-full
 gem install rails
