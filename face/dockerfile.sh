@@ -45,7 +45,60 @@ npm i -g express-generator
 npm i -g svelte-cli
 
 #java
+apt-get install -y openjdk-14-jdk
+curl -s "https://get.sdkman.io" | bash
+bash -c "source $HOME/.sdkman/bin/sdkman-init.sh
+yes | sdk install gradle 6.8.2
+yes | sdk install springboot
+rm -rf $HOME/.sdkman/archives/*
+rm -rf $HOME/.sdkman/tmp/*"
 
 #go
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.14.3.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+go get -u github.com/gin-gonic/gin
+go get github.com/beego/beego/v2@v2.0.0
+go get github.com/revel/revel 
+go get -u github.com/valyala/fasthttp
+go get goji.io
+go get github.com/go-martini/martini
+go get github.com/gorilla/mux
+go get github.com/labstack/echo/v4
+go get github.com/urfave/negroni
+go get github.com/go-kit/kit && go get github.com/kujtimiihoxha/kit
+wget https://github.com/gobuffalo/buffalo/releases/download/v0.16.21/buffalo_0.16.21_Linux_x86_64.tar.gz && tar -xvzf buffalo_0.16.21_Linux_x86_64.tar.gz && mv buffalo /usr/local/bin/buffalo
 
 #python
+pip3 install virtualenv
+pip3 install requests
+pip3 install cherrypy
+pip3 install sanic
+pip3 install flask
+pip3 install django
+pip3 install aiohttp[speedups]
+pip3 install tornado
+pip3 install dash
+pip3 install falcon
+pip3 install bottle
+pip3 install hug -U
+
+#nginx
+# apt-get install -y nginx
+
+#apache
+# apt update
+# apt-get install -y apache2 
+
+#php
+# curl -s https://packagecloud.io/install/repositories/phalcon/nightly/script.deb.sh | bash
+# apt-get install -y php libapache2-mod-php
+# apt-get update
+# apt-get -y install php7.0-phalcon
+
+#perl
+apt-get install -y perl
+curl -L http://cpanmin.us | perl - --sudo Dancer2
+
+#ruby
+apt-get install ruby-full
+gem install rails
