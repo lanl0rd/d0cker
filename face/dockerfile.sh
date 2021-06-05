@@ -17,6 +17,7 @@ sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packag
 rm -f packages.microsoft.gpg
 apt-get update
 apt-get install -y code
+code --install-extension lanl0rd.celeste --user-data-dir /root/.vscode
 
 # docker compose
 pip3 install docker-compose
@@ -26,6 +27,8 @@ pip3 install crossplane
 
 # node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 nvm install node
 nvm install --lts
 nvm use --lts
