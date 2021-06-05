@@ -10,9 +10,9 @@ services:
     networks:
       - host
     environment:
-      - FRP_ADMIN_USER=${FRP_ADMIN_USER}
-      - FRP_ADMIN_PWD=${FRP_ADMIN_PWD}
-      - FRP_TOKEN=${FRP_TOKEN}
+      - FRP_ADMIN_USER=${FRP_ADMIN_USER:-admin}
+      - FRP_ADMIN_PWD=${FRP_ADMIN_PWD:-pass}
+      - FRP_TOKEN=${FRP_TOKEN:-token}
     volumes:
       # - ./frps.ini:/etc/frp/frps-docker.ini
       - ./frps.ini:/etc/frp/frps.ini
