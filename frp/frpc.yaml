@@ -13,9 +13,9 @@ services:
       - FRP_SERVER_ADDR=${FRP_SERVER_ADDR}
       # - FRP_HTTP_PROXY_USER=${FRP_HTTP_PROXY_USER}
       # - FRP_HTTP_PROXY_PASSWD=${FRP_HTTP_PROXY_PASSWD}
-      - FRP_TOKEN=${FRP_TOKEN}
-      # - FRP_LOCAL_IP=127.0.0.1
-      - FRP_LOCAL_IP=host.docker.internal
+      - FRP_TOKEN=${FRP_TOKEN:-token}
+      - FRP_LOCAL_IP=127.0.0.1
+      # - FRP_LOCAL_IP=host.docker.internal
     volumes:
       # - ./frpc.ini:/etc/frp/frpc-docker.ini
       - ./frpc.ini:/etc/frp/frpc.ini
