@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM node:fermium-buster AS build
+FROM --platform=$TARGETPLATFORM lanl0rd/face:dorowu AS build
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
