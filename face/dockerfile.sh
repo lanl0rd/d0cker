@@ -101,4 +101,4 @@ apt-get install -y perl
 
 #ruby
 apt-get install -y ruby-full
-gem install rails
+# gem install rails
