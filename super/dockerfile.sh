@@ -6,7 +6,7 @@ apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y apt-utils apt-transport-https ca-certificates gnupg-agent software-properties-common
 
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils dialog nano docker.io sudo tmux zsh ksh gcc g++ bash-completion build-essential file locales htop dstat vim
+DEBIAN_FRONTEND=noninteractive apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils dialog nano docker.io sudo tmux zsh ksh gcc g++ install make bash-completion build-essential file locales htop dstat vim
 apt-get update
 
 useradd -ms /bin/bash super
@@ -33,15 +33,25 @@ pip3 install crossplane
 #java
 apt-get install -y openjdk-14-jdk
 curl -s "https://get.sdkman.io" | bash
-bash -c "source /home/super/.sdkman/bin/sdkman-init.sh
+bash -c "source $HOME/.sdkman/bin/sdkman-init.sh
 yes | sdk install gradle 6.8.2
 yes | sdk install springboot
-rm -rf /home/super/.sdkman/archives/*
-rm -rf /home/super/.sdkman/tmp/*"
+rm -rf $HOME/.sdkman/archives/*
+rm -rf $HOME/.sdkman/tmp/*"
+
+#perl
+apt-get install -y perl
+# curl -L http://cpanmin.us | perl - --sudo Dancer2
+
+#ruby
+apt-get install -y ruby-full
+# gem install rails
 
 #go
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.14.3.linux-amd64.tar.gz
+wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
+. $HOME/.profile
 go get -u github.com/gin-gonic/gin
 go get github.com/beego/beego/v2@v2.0.0
 go get github.com/revel/revel 
@@ -52,27 +62,21 @@ go get github.com/gorilla/mux
 go get github.com/labstack/echo/v4
 go get github.com/urfave/negroni
 go get github.com/go-kit/kit && go get github.com/kujtimiihoxha/kit
-wget https://github.com/gobuffalo/buffalo/releases/download/v0.16.21/buffalo_0.16.21_Linux_x86_64.tar.gz && tar -xvzf buffalo_0.16.21_Linux_x86_64.tar.gz && mv buffalo /usr/local/bin/buffalo
-
-#perl
-apt-get install -y perl
-# curl -L http://cpanmin.us | perl - --sudo Dancer2
-
-#ruby
-apt-get install -y ruby-full
-# gem install rails
+# wget https://github.com/gobuffalo/buffalo/releases/download/v0.16.21/buffalo_0.16.21_Linux_x86_64.tar.gz && tar -xvzf buffalo_0.16.21_Linux_x86_64.tar.gz && mv buffalo /usr/local/bin/buffalo
 
 # nvm & node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-cp -r /root/.nvm /home/super/.nvm
-chown super:super -R "/home/super/.nvm"
-echo 'export NVM_DIR="/home/super/.nvm"'                                       >> "/home/super/.bashrc"
-echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> "/home/super/.bashrc"
-echo '[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion' >> "/home/super/.bashrc"
-source /home/super/.nvm/nvm.sh
-nvm install node 
-nvm use node
-nvm install v14.17.0
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+# cp -r /root/.nvm /home/super/.nvm
+# chown super:super -R "/home/super/.nvm"
+# echo 'export NVM_DIR="/home/super/.nvm"'                                       >> "/home/super/.bashrc"
+# echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> "/home/super/.bashrc"
+# echo '[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion' >> "/home/super/.bashrc"
+# source /home/super/.nvm/nvm.sh
+# nvm install node 
+# nvm use node
+# nvm install v14.17.0
+curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+apt-get install -y nodejs
 npm i -g npm
 npm i -g yarn --force
 npm i -g typescript
@@ -84,6 +88,7 @@ npm i -g http-server
 npm i -g create-react-app
 npm i -g express-generator
 npm i -g svelte-cli
+npm i -g puppeteer
 
 #nginx
 # apt-get install -y nginx
