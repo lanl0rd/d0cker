@@ -11,6 +11,7 @@ apt-get update
 
 useradd -ms /bin/bash super
 usermod -aG docker super
+echo 'super ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 #python
 pip3 install virtualenv
@@ -63,8 +64,8 @@ apt-get install -y ruby-full
 
 # nvm & node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+cp -r /root/.nvm /home/super/.nvm
 chown super:super -R "/home/super/.nvm"
-echo 'super ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 echo 'export NVM_DIR="/home/super/.nvm"'                                       >> "/home/super/.bashrc"
 echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm' >> "/home/super/.bashrc"
 echo '[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion' >> "/home/super/.bashrc"
