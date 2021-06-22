@@ -5,5 +5,3 @@ ARG BUILDPLATFORM
 WORKDIR /app
 COPY dockerfile.sh /tmp/  
 RUN chmod u+x /tmp/dockerfile.sh && TARGETPLATFORM=$TARGETPLATFORM BUILDPLATFORM=$BUILDPLATFORM /tmp/dockerfile.sh
-WORKDIR /home/node/app
-USER node
