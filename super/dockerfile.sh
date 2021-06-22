@@ -48,8 +48,11 @@ apt-get install -y ruby-full
 # gem install rails
 
 #go
-wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
+godist="go1.16.5.linux-amd64"
+if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then godist="go1.16.5.linux-arm64"; fi ;
+
+wget "https://golang.org/dl/$godist.tar.gz"
+tar -C /usr/local -xzf "$godist.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 . $HOME/.profile
 go get -u github.com/gin-gonic/gin
