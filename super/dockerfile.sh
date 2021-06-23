@@ -6,7 +6,7 @@ apt update
 DEBIAN_FRONTEND=noninteractive apt-get install -y apt-utils apt-transport-https ca-certificates gnupg-agent software-properties-common
 
 apt update
-DEBIAN_FRONTEND=noninteractive apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils dialog nano docker.io sudo tmux zsh ksh gcc g++ install make bash-completion build-essential file locales htop dstat vim
+DEBIAN_FRONTEND=noninteractive apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils dialog nano docker.io sudo tmux zsh ksh gcc g++ make bash-completion build-essential file locales htop dstat vim
 apt update
 
 useradd -ms /bin/bash super
