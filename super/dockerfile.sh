@@ -56,6 +56,7 @@ if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then godist="go1.16.5.linux-arm64"; fi ;
 
 wget "https://golang.org/dl/$godist.tar.gz"
 tar -C /usr/local -xzf "$godist.tar.gz"
+mv go /usr/local/go/bin
 export PATH=$PATH:/usr/local/go/bin
 rm "$godist.tar.gz"
 . $HOME/.profile
