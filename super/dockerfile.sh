@@ -83,7 +83,7 @@ go get github.com/go-kit/kit && go get github.com/kujtimiihoxha/kit
 # nvm use node
 # nvm install v14.17.0
 curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
-apt-get install -y nodejs
+DEBIAN_FRONTEND=noninteractive apt install -y nodejs
 npm i -g npm
 npm i -g yarn --force
 npm i -g typescript
