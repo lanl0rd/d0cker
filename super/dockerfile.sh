@@ -2,18 +2,21 @@
 export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
 echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
-apt-get update
+apt update
 DEBIAN_FRONTEND=noninteractive apt-get install -y apt-utils apt-transport-https ca-certificates gnupg-agent software-properties-common
 
-apt-get update
+apt update
 DEBIAN_FRONTEND=noninteractive apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils dialog nano docker.io sudo tmux zsh ksh gcc g++ install make bash-completion build-essential file locales htop dstat vim
-apt-get update
+apt update
 
 useradd -ms /bin/bash super
 usermod -aG docker super
 echo 'super ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 #python
+apt --purge autoremove python3-pip
+DEBIAN_FRONTEND=noninteractive apt install -y python3-pip
+pip3 -v
 pip3 install virtualenv
 pip3 install requests
 pip3 install cherrypy
@@ -31,7 +34,7 @@ pip3 install docker-compose
 pip3 install crossplane
 
 #java
-apt-get install -y openjdk-14-jdk
+DEBIAN_FRONTEND=noninteractive apt install -y openjdk-14-jdk
 curl -s "https://get.sdkman.io" | bash
 bash -c "source $HOME/.sdkman/bin/sdkman-init.sh
 yes | sdk install gradle 6.8.2
@@ -40,11 +43,11 @@ rm -rf $HOME/.sdkman/archives/*
 rm -rf $HOME/.sdkman/tmp/*"
 
 #perl
-apt-get install -y perl
+DEBIAN_FRONTEND=noninteractive apt install -y perl
 # curl -L http://cpanmin.us | perl - --sudo Dancer2
 
 #ruby
-apt-get install -y ruby-full
+DEBIAN_FRONTEND=noninteractive apt install -y ruby-full
 # gem install rails
 
 #go
@@ -54,6 +57,7 @@ if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then godist="go1.16.5.linux-arm64"; fi ;
 wget "https://golang.org/dl/$godist.tar.gz"
 tar -C /usr/local -xzf "$godist.tar.gz"
 export PATH=$PATH:/usr/local/go/bin
+rm "$godist.tar.gz"
 . $HOME/.profile
 go get -u github.com/gin-gonic/gin
 go get github.com/beego/beego/v2@v2.0.0
