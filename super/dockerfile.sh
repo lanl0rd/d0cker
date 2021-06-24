@@ -96,7 +96,6 @@ npm i -g http-server
 npm i -g create-react-app
 npm i -g express-generator
 npm i -g svelte-cli
-npm i -g puppeteer
 
 #nginx
 # apt-get install -y nginx
