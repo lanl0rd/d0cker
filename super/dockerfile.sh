@@ -6,7 +6,7 @@ apt update
 DEBIAN_FRONTEND=noninteractive apt-get install -y apt-utils apt-transport-https ca-certificates gnupg-agent software-properties-common
 
 apt update
-DEBIAN_FRONTEND=noninteractive apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils dialog nano docker.io sudo tmux zsh ksh gcc g++ make bash-completion build-essential file locales htop dstat vim
+DEBIAN_FRONTEND=noninteractive apt-get install -y curl git wget rsync openssl openssh-client openssh-server mergerfs sshfs zip unzip python3-pip dnsutils dialog nano docker.io sudo tmux zsh ksh gcc g++ make bash-completion build-essential file locales htop dstat vim chromium-browser
 apt update
 
 useradd -ms /bin/bash super
@@ -96,6 +96,7 @@ npm i -g http-server
 npm i -g create-react-app
 npm i -g express-generator
 npm i -g svelte-cli
+npm i -g puppeteer
 
 #nginx
 # apt-get install -y nginx
