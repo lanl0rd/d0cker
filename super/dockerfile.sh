@@ -50,28 +50,6 @@ DEBIAN_FRONTEND=noninteractive apt install -y perl
 DEBIAN_FRONTEND=noninteractive apt install -y ruby-full
 # gem install rails
 
-#go
-godist="go1.16.5.linux-amd64"
-if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then godist="go1.16.5.linux-arm64"; fi ;
-
-wget "https://golang.org/dl/$godist.tar.gz"
-tar -C /usr/local -xzf "$godist.tar.gz"
-mv go /usr/local/go/bin
-export PATH=$PATH:/usr/local/go/bin
-rm "$godist.tar.gz"
-. $HOME/.profile
-go get -u github.com/gin-gonic/gin
-go get github.com/beego/beego/v2@v2.0.0
-go get github.com/revel/revel 
-go get -u github.com/valyala/fasthttp
-go get goji.io
-go get github.com/go-martini/martini
-go get github.com/gorilla/mux
-go get github.com/labstack/echo/v4
-go get github.com/urfave/negroni
-go get github.com/go-kit/kit && go get github.com/kujtimiihoxha/kit
-# wget https://github.com/gobuffalo/buffalo/releases/download/v0.16.21/buffalo_0.16.21_Linux_x86_64.tar.gz && tar -xvzf buffalo_0.16.21_Linux_x86_64.tar.gz && mv buffalo /usr/local/bin/buffalo
-
 # nvm & node
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 # cp -r /root/.nvm /home/super/.nvm
@@ -97,6 +75,28 @@ npm i -g create-react-app
 npm i -g express-generator
 npm i -g svelte-cli
 npm i -g puppeteer
+
+#go
+godist="go1.16.5.linux-amd64"
+if [[ "$TARGETPLATFORM" == *"arm"* ]] ; then godist="go1.16.5.linux-arm64"; fi ;
+
+wget "https://golang.org/dl/$godist.tar.gz"
+tar -C /usr/local -xzf "$godist.tar.gz"
+# mv go /usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
+rm "$godist.tar.gz"
+. $HOME/.profile
+go get -u github.com/gin-gonic/gin
+go get github.com/beego/beego/v2@v2.0.0
+go get github.com/revel/revel 
+go get -u github.com/valyala/fasthttp
+go get goji.io
+go get github.com/go-martini/martini
+go get github.com/gorilla/mux
+go get github.com/labstack/echo/v4
+go get github.com/urfave/negroni
+go get github.com/go-kit/kit && go get github.com/kujtimiihoxha/kit
+# wget https://github.com/gobuffalo/buffalo/releases/download/v0.16.21/buffalo_0.16.21_Linux_x86_64.tar.gz && tar -xvzf buffalo_0.16.21_Linux_x86_64.tar.gz && mv buffalo /usr/local/bin/buffalo
 
 #nginx
 # apt-get install -y nginx
