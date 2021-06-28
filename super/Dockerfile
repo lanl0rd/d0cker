@@ -5,7 +5,7 @@ ARG BUILDPLATFORM
 WORKDIR /app
 COPY dockerfile.sh /tmp/  
 RUN chmod u+x /tmp/dockerfile.sh && TARGETPLATFORM=$TARGETPLATFORM BUILDPLATFORM=$BUILDPLATFORM /tmp/dockerfile.sh
+ENV PATH "$PATH:/usr/local/go/bin"
 USER super
-RUN export PATH=$PATH:/usr/local/go/bin
 WORKDIR /home/super
 ENTRYPOINT ["/bin/bash"]
