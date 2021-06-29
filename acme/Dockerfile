@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine AS builder
+FROM --platform=$TARGETPLATFORM golang:1.13-alpine AS builder
 
 RUN apk add --update gcc musl-dev git
 
@@ -7,7 +7,7 @@ RUN git clone https://github.com/joohoi/acme-dns /tmp/acme-dns
 WORKDIR /tmp/acme-dns
 RUN CGO_ENABLED=1 go build
 
-FROM alpine:latest
+FROM --platform=$TARGETPLATFORM alpine:latest
 
 WORKDIR /root/
 COPY --from=builder /tmp/acme-dns .
